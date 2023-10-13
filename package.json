@@ -4,15 +4,6 @@
     "description": "A vite plugin which generates a webfont out of svg icons",
     "type": "module",
     "main": "./src/index.ts",
-    "module": "./src/index.ts",
-    "types": "./src/index.ts",
-    "exports": {
-        ".": {
-            "type": "./src/index.ts",
-            "import": "./src/index.ts",
-            "require": "./src/index.ts"
-        }
-    },
     "engines": {
         "node": ">=16.0.0"
     },
@@ -28,7 +19,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/chemiAtlow/vite-svg-2-webfont.git"
+        "url": "git+https://github.com/micolator/vite-svg-2-webfont.git"
     },
     "keywords": [
         "vite",

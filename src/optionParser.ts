@@ -74,6 +74,10 @@ export interface IconPluginOptions<T extends GeneratedFontTypes = GeneratedFontT
      */
     cssFontsUrl?: string;
     /**
+     * Fonts base url for build output.
+     */
+    buildFontsBaseUrl?: string;
+    /**
      * Path for generated HTML file.
      * - Relative to the {@link dest} property, unless set to an absolute path.
      * - Postfixed with {@link fontName} unless set to a file name with a file extension.
@@ -212,6 +216,7 @@ export function parseOptions<T extends GeneratedFontTypes = GeneratedFontTypes>(
         htmlDest: resolveFileDest(options.dest, options.htmlDest, options.fontName, 'html'),
         ...(options.cssTemplate && { cssTemplate: resolve(options.dest, options.cssTemplate) }),
         ...(options.cssFontsUrl && { cssFontsUrl: resolve(options.dest, options.cssFontsUrl) }),
+        ...(options.buildFontsBaseUrl && { buildFontsBaseUrl: resolve(options.dest, options.buildFontsBaseUrl) }),
         ...(options.htmlTemplate && { htmlTemplate: resolve(options.dest, options.htmlTemplate) }),
         ...(typeof options.fixedWidth !== 'undefined' && { fixedWidth: options.fixedWidth }),
         ...(typeof options.centerHorizontally !== 'undefined' && { centerHorizontally: options.centerHorizontally }),
